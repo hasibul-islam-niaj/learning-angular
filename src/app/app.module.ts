@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { AuthorinfoComponent } from './authorinfo/authorinfo.component';
 import { FormsModule } from '@angular/forms';
 import { TestingComponent } from './entities/testing/testing.component';
+import { DashboardComponent } from './entities/dashboard/dashboard.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { BggreenhighlightDirective } from './directives/bggreenhighlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorinfoComponent,
-    TestingComponent
+    TestingComponent,
+    DashboardComponent,
+    HighlightDirective,
+    BggreenhighlightDirective
   ],
   imports: [
     BrowserModule,
