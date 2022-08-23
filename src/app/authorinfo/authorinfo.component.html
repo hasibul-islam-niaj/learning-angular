@@ -1,0 +1,23 @@
+<h3>{{author.id}} - {{author.name | uppercase}}</h3>
+
+<input name="author_id" [(ngModel)]="author.id">
+<input name="author_name" [(ngModel)]="author.name">
+<input name="author_company" [(ngModel)]="author.company">
+
+
+<br><span>-------------------------------------------------</span>
+
+<div *ngFor="let author of authors; let i = index">
+    <div >
+        <span>{{i+1}}. {{author.id + '-' + author.name}} | </span>
+        <button green-hl type="button" (click)="onEdit(author)">Edit</button>
+        <button green-hl type="button" (click)="onView(author)">View</button>
+    </div>
+    
+</div>
+
+<br><span>-------------------------------------------------</span>
+
+<div ng-repeat="author in authors">
+    <div>{{author.name}}</div>
+</div>
