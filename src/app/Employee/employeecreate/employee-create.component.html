@@ -1,0 +1,42 @@
+<p>employeecreate works! {{employee.name}}</p>
+<form>
+  <div>
+    <label [for]="ipEmpId">{{labelEmpId}}</label>
+    <input [id]="ipEmpId" [name]="ipEmpId" [(ngModel)]="employee.id">
+  </div>
+
+  <div>
+    <label [for]="ipEmpName">{{labelEmpName}}</label>
+    <input [id]="ipEmpName" [name]="ipEmpName" [(ngModel)]="employee.name">
+  </div>
+
+  <div>
+    <label [for]="ipEmpMobile">{{labelEmpMobile}}</label>
+    <input [id]="ipEmpMobile" [name]="ipEmpMobile" [(ngModel)]="employee.mobile">
+  </div>
+
+  <button green-hl (click)="onSubmit()">Submit</button>
+</form>
+
+<h3>All Employees ({{totalEmployees}})</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Sl.</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let i = index" [attr.data-index]="i">
+      <td>{{i+1}}</td>
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.mobile}}</td>
+      <th><button (click)="onEdit(employee.id)">Edit</button></th>
+    </tr>
+  </tbody>
+</table>
+
